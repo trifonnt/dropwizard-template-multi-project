@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "My Big Book",
+        "author": {
+            "lastName": "Smith",
+            "firstName": "John"
+        }
+    },
+    {
+        "id": 2,
+        "title": "My Little Book",
+        "author": {
+            "lastName": "Smith",
+            "firstName": "John"
+        }
+    }
+]

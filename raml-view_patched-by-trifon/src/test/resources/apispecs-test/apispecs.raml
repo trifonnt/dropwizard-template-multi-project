@@ -1,0 +1,122 @@
+#%RAML 0.8
+title: Test API
+version: 1.0-SNAPSHOT
+protocols: [ HTTP ]
+baseUri: http://localhost/
+
+traits:
+  - deprecated:
+    usage: apply this to any action that is deprecated
+    description: some requests are deprecated and are expected to be retired
+
+documentation:
+  - title: Summary
+    content: !include documentation/summary.md
+
+securitySchemes:
+  - basic:
+      description: basic HTTP authentication
+      type: basic
+      describedBy:
+        headers:
+          Authorization:
+            description: Basic authentication token
+            type: string
+            pattern: Basic (.*)
+            example: |
+              Basic d3hwMDAxQGFzaXM6dGVzdGluZw==
+        responses:
+          401:
+            description: |
+              Invalid username or password provided
+  - custom-sec:
+      description: custom security model
+      type: custom
+      describedBy:
+        queryParameters:
+          custom-sec:
+            description: custom security token
+            type: string
+            example: d3hwMDAxQGFzaXM6dGVzdGluZw==
+        responses:
+          401:
+            description: Invalid token provided
+          403:
+            description: User is not allowed to undertake this action
+
+/books:
+  displayName: Books
+  description: resource for getting and managing `books`
+  get:
+    description: return a list of books
+    securedBy: [ custom-sec ]
+    queryParameters:
+      genre:
+        description: the genre to filter on
+        type: string
+        required: false
+        example: War
+        enum: [ War, Crime, Sci-Fi, Romance, Comedy, Fantasy ]
+        default: War
+    responses:
+      200:
+        description: search request completed successfully and a list of books returned
+        body:
+          application/json:
+            schema: !include schemas/books-response.json
+            example: !include examples/books-response.json
+  post:
+    description: add a book to the collection
+    securedBy: [ basic ]
+    is: [ deprecated ]
+    headers:
+      x-call-id:
+        description: the call id used to track a users journey through the services
+        type: string
+        required: false
+        example: abcd-efab-1234-5678
+    body:
+      application/json:
+        schema: !include schemas/book-request.json
+        example: !include examples/book-post-request.json
+    responses:
+      201:
+        description: book successfully added to collection
+        body:
+          application/json:
+            schema: !include schemas/book-response.json
+            example: !include examples/book-response.json
+      404:
+        description: author not found
+        body:
+          text/plain:
+            example: Genre [Zombie] not found
+  /{id}:
+    description: operate against individual book
+    uriParameters:
+      id:
+        description: the book id
+        type: number
+        required: true
+        example: 1
+        pattern: ([0-9].+)
+    get:
+      description: retrieve a single book
+      responses:
+        200:
+          description: book successfully found
+          headers:
+            x-call-id:
+              description: the call id used to track a users journey through the services
+              type: string
+              required: true
+              example: abcd-efab-1234-5678
+          body:
+            application/json:
+              schema: !include schemas/book-response.json
+              example: !include examples/book-response.json
+        404:
+          description: book could not be found
+          body:
+            text/plain:
+              example: Book [1] could not be found

@@ -1,0 +1,238 @@
+/* Colours */
+/* Common Functions */
+/* HTML Tags */
+body {
+  font-family: Helvetica, arial, sans-serif !important;
+  font-size: 0.8em;
+  color: #0f0f0f;
+  padding-top: 10px;
+}
+h1#title {
+  border: solid 1px #c0c0c0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  background-color: #fafafa;
+  margin-top: 5px;
+}
+h2 {
+  border-bottom: solid 1px #c0c0c0;
+}
+h3 {
+  font-size: 110%;
+  padding: 0;
+  margin: 0;
+}
+code {
+  border: solid 1px #c0c0c0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background-color: #efefef;
+  font-size: 110%;
+  padding-bottom: 1px;
+  word-wrap: break-word;
+}
+code.deprecated {
+  border: solid 1px #ff0000;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background-color: #f5bcae;
+  color: #ff0000;
+}
+pre {
+  margin: 0;
+  padding: 5px;
+  word-wrap: break-word;
+}
+/* ID Elements */
+#info {
+  margin-top: 5px;
+}
+#content {
+  width: 800px;
+  margin: 0 auto;
+}
+#documentation {
+  margin: 10px;
+}
+#endpoints {
+  margin: 10px;
+}
+/* Class Elements */
+.right {
+  float: right;
+  display: inline;
+}
+.right p {
+  margin: 0;
+  padding: 0;
+}
+.highlight-block {
+  border: solid 1px #c0c0c0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-color: #fafafa;
+  padding: 5px;
+}
+.alert {
+  border: solid 1px #ff0000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-color: #f5bcae;
+  color: #ff0000;
+  padding: 5px;
+  display: inline;
+}
+div.endpoint {
+  border: solid 1px #c0c0c0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-bottom: 10px;
+}
+div.endpoint > div.header {
+  padding: 5px;
+  margin: 0;
+  border: solid 1px #fafafa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-size: 110%;
+  font-weight: bold;
+  background-color: #fafafa;
+}
+div.endpoint > div.header div.right {
+  font-weight: normal;
+  font-size: 95%;
+  font-style: italic;
+}
+div.endpoint > div.details {
+  padding: 5px;
+}
+div.endpoint div.uri {
+  margin-bottom: 10px;
+}
+div.endpoint div.GET {
+  border: solid 1px #006699;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+div.endpoint div.GET > div.header {
+  background-color: #006699;
+}
+div.endpoint div.POST {
+  border: solid 1px #009966;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+div.endpoint div.POST > div.header {
+  background-color: #009966;
+}
+div.endpoint div.PATCH {
+  border: solid 1px #ebea06;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+div.endpoint div.PATCH > div.header {
+  background-color: #ebea06;
+}
+div.endpoint div.PUT {
+  border: solid 1px #eb8510;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+div.endpoint div.PUT > div.header {
+  background-color: #eb8510;
+}
+div.endpoint div.DELETE {
+  border: solid 1px #990000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+div.endpoint div.DELETE > div.header {
+  background-color: #990000;
+}
+div.endpoint div.uri > div.header {
+  margin: 0;
+  padding: 5px;
+  color: #ffffff;
+  font-family: courier;
+}
+div.endpoint div.uri div.description {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 90%;
+  font-style: italic;
+  font-family: courier;
+}
+div.endpoint div.uri div.description p {
+  margin: 0;
+  padding: 0;
+}
+div.endpoint div.uri > div.details {
+  padding: 5px;
+}
+div.endpoint div.uri > div.details > div.section {
+  border-bottom: solid 1px #c0c0c0;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+div.endpoint div.uri > div.details > div.section > h5 {
+  font-size: 90%;
+  border-bottom: dashed 1px #efefef;
+}
+div.endpoint div.uri > div.details > p.section-header {
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: solid 1px #c0c0c0;
+  padding-bottom: 2px;
+}
+div.endpoint div.uri > div.details > div.section > p.section-sub-header {
+  font-weight: bold;
+  font-size: 0.9em;
+  border-bottom: solid 1px #efefef;
+  padding-bottom: 2px;
+}
+div.endpoint div.uri > div.details > p.section-header > span.right,
+div.endpoint div.uri > div.details > div.section > p.section-sub-header > span.right {
+  font-weight: normal;
+}
+div.endpoint div.uri > div.details table.parameters {
+  border: none;
+  margin: 0;
+}
+div.endpoint div.uri > div.details table.parameters tr {
+  background: none;
+}
+div.endpoint div.uri > div.details table.parameters td {
+  border: none;
+  background: none;
+}
+div.endpoint div.uri > div.details table.parameters td.name {
+  text-align: right;
+  vertical-align: top;
+  font-weight: bold;
+}
+div.endpoint div.uri > div.details table.parameters td > p {
+  margin: 0;
+}
+div.endpoint div.uri > div.details .highlight-block {
+  font-family: courier;
+}
+div.endpoint div.uri > div.details .highlight-block span.label {
+  color: #c82829;
+}
+div.endpoint div.uri > div.details .highlight-block span.value {
+  color: #718c00;
+}

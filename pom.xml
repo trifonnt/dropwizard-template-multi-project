@@ -17,6 +17,7 @@
 		<module>dropwizard-template-api</module>
 		<module>dropwizard-template-application</module>
 		<module>dropwizard-template-client</module>
+		<module>raml-view_patched-by-trifon</module>
 	</modules>
 
 	<properties>

@@ -1,0 +1,276 @@
+/* Colours */
+@pageBackground: #fdfdfd;
+@defaultFontColour: #0f0f0f;
+
+@darkGrey: #c0c0c0;
+@grey: #efefef;
+@mediumGrey: #fafafa;
+@linkBlue: #336699;
+@fullRed: #ff0000;
+@lightRed: #F5BCAE;
+@white: #ffffff;
+
+@getColour: #006699;
+@postColour: #009966;
+@deleteColour: #990000;
+@putColour: #EB8510;
+@patchColour: #EBEA06;
+
+@headerLabelColour: #c82829;
+@headerValueColour: #718c00;
+
+
+/* Common Functions */
+.corners (@radius, @color) {
+  border: solid 1px @color;
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+/* HTML Tags */
+body {
+  font-family: Helvetica, arial, sans-serif !important;
+  font-size: 0.8em;
+  color: @defaultFontColour;
+  padding-top: 10px;
+}
+
+h1#title {
+  .corners(5px, @darkGrey);
+  padding: 10px;
+  background-color: @mediumGrey;
+  margin-top: 5px;
+}
+
+h2 {
+  border-bottom: solid 1px @darkGrey;
+}
+
+h3 {
+  font-size: 110%;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  .corners(3px, @darkGrey);
+  background-color: @grey;
+  font-size: 110%;
+  padding-bottom: 1px;
+  word-wrap: break-word;
+}
+
+code.deprecated {
+  .corners(3px, @fullRed);
+  background-color: @lightRed;
+  color: @fullRed;
+}
+
+pre {
+  margin: 0;
+  padding: 5px;
+  word-wrap: break-word;
+}
+
+/* ID Elements */
+#info {
+  margin-top: 5px;
+}
+
+#content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#documentation {
+  margin: 10px;
+}
+
+#endpoints {
+  margin: 10px;
+}
+
+/* Class Elements */
+
+.right {
+  float: right;
+  display: inline;
+}
+
+.right p {
+  margin: 0;
+  padding: 0;
+}
+
+.highlight-block {
+  .corners(5px, @darkGrey);
+  background-color: @mediumGrey;
+  padding: 5px;
+}
+
+.alert {
+  .corners(5px, @fullRed);
+  background-color: @lightRed;
+  color: @fullRed;
+  padding: 5px;
+  display: inline;
+}
+
+div.endpoint {
+  .corners(5px, @darkGrey);
+  margin-bottom: 10px;
+}
+
+div.endpoint>div.header {
+  padding: 5px;
+  margin: 0;
+  .corners(5px, @mediumGrey);
+  font-size: 110%;
+  font-weight: bold;
+  background-color: @mediumGrey;
+}
+
+div.endpoint>div.header div.right {
+  font-weight: normal;
+  font-size: 95%;
+  font-style: italic;
+}
+
+div.endpoint>div.details {
+  padding: 5px;
+}
+
+div.endpoint div.uri {
+  margin-bottom: 10px;
+}
+
+div.endpoint div.GET {
+  .corners(5px, @getColour);
+}
+
+div.endpoint div.GET>div.header {
+  background-color: @getColour;
+}
+
+div.endpoint div.POST {
+  .corners(5px, @postColour);
+}
+
+div.endpoint div.POST>div.header {
+  background-color: @postColour;
+}
+
+div.endpoint div.PATCH {
+  .corners(5px, @patchColour);
+}
+
+div.endpoint div.PATCH>div.header {
+  background-color: @patchColour;
+}
+
+div.endpoint div.PUT {
+  .corners(5px, @putColour);
+}
+
+div.endpoint div.PUT>div.header {
+  background-color: @putColour;
+}
+
+div.endpoint div.DELETE {
+  .corners(5px, @deleteColour);
+}
+
+div.endpoint div.DELETE>div.header {
+  background-color: @deleteColour;
+}
+
+div.endpoint div.uri>div.header {
+  margin: 0;
+  padding: 5px;
+  color: @white;
+  font-family: courier;
+}
+
+div.endpoint div.uri div.description {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 90%;
+  font-style: italic;
+  font-family: courier;
+}
+
+div.endpoint div.uri div.description p {
+  margin: 0;
+  padding: 0;
+}
+
+div.endpoint div.uri>div.details {
+  padding: 5px;
+}
+
+div.endpoint div.uri>div.details>div.section {
+  border-bottom: solid 1px @darkGrey;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+div.endpoint div.uri>div.details>div.section>h5 {
+  font-size: 90%;
+  border-bottom: dashed 1px @grey;
+}
+
+div.endpoint div.uri>div.details>p.section-header {
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: solid 1px @darkGrey;
+  padding-bottom: 2px;
+}
+
+div.endpoint div.uri>div.details>div.section>p.section-sub-header {
+  font-weight: bold;
+  font-size: 0.9em;
+  border-bottom: solid 1px @grey;
+  padding-bottom: 2px;
+}
+
+div.endpoint div.uri>div.details>p.section-header>span.right, div.endpoint div.uri>div.details>div.section>p.section-sub-header>span.right {
+  font-weight: normal;
+}
+
+div.endpoint div.uri>div.details table.parameters {
+  border: none;
+  margin: 0;
+}
+
+div.endpoint div.uri>div.details table.parameters tr {
+  background: none;
+}
+
+div.endpoint div.uri>div.details table.parameters td {
+  border: none;
+  background: none;
+}
+
+div.endpoint div.uri>div.details table.parameters td.name {
+  text-align: right;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+div.endpoint div.uri>div.details table.parameters td>p {
+  margin: 0;
+}
+
+div.endpoint div.uri>div.details .highlight-block {
+  font-family: courier;
+}
+
+div.endpoint div.uri>div.details .highlight-block span.label {
+  color: @headerLabelColour;
+}
+
+div.endpoint div.uri>div.details .highlight-block span.value {
+  color: @headerValueColour;
+}

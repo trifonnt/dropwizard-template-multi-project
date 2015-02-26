@@ -1,0 +1,27 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "number"
+            },
+            "title": {
+                "type": "string"
+            },
+            "author": {
+                "type": "object",
+                "properties": {
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    }
+                },
+                "required": ["lastName", "firstName"]
+            }
+        },
+        "required": ["id", "title", "author"]
+    }
+}
