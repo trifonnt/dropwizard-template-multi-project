@@ -1,0 +1,19 @@
+#!/bin/bash
+cd $OPENSHIFT_REPO_DIR
+# sed -i 's/@OPENSHIFT_DATA_DIR@/'"$OPENSHIFT_DATA_DIR"'/g' .openshift/settings.xml
+# mvn -s $OPENSHIFT_REPO_DIR/.openshift/settings.xml -q package
+
+# mvn package
+
+
+mkdir -p $OPENSHIFT_DATA_DIR/m2/repository
+echo -e "<settings><localRepository>$OPENSHIFT_DATA_DIR/m2/repository</localRepository>\n</settings>\n" > $OPENSHIFT_REPO_DIR/.openshift/settings.xml
+cd $OPENSHIFT_REPO_DIR
+mvn -s $OPENSHIFT_REPO_DIR/.openshift/settings.xml package
+
+
+echo ""
+echo "==================="
+echo "Trifon - BUILD - OK"
+echo "==================="
+echo ""
